@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue May 10 16:55:20 2022
+
+@author: student
+"""
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+excel_file_path = r"C:/Users/student/Desktop/Data 2.xlsx"
+df = pd.read_excel(excel_file_path)
+print(df.head())
+print(df.describe())
+print(df.shape)
+print(df.isnull().sum())
+
+import seaborn as sns
+matrix = df.corr().round(2)
+sns.heatmap(matrix, annot= True)
+plt.show()
